@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+    sysctls:
+      net.ipv4.ip_local_port_range: "40000 40010"
